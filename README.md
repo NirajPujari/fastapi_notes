@@ -46,7 +46,7 @@ uvicorn main:app --reload
 - POST `/api/notes/{id}/share`: Share a note with another user for the authenticated user.
 - GET `/api/search?q=:query`: Search for notes based on keywords for the authenticated user.
 
-## Usage Examples
+## Usage Examples(Postman)
 ### Authentication Endpoints
 
 **Signup:**
