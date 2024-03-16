@@ -6,45 +6,62 @@ FastAPI is a modern, fast (high-performance) web framework for building APIs wit
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the libraries.
 
-```bash
-pip install fastapi pymongo pydantic uvicorn
-```
+    pip install fastapi pymongo pydantic uvicorn
 
 ## How to start
 
 1. Use the git to clone the repo:
-```bash 
-git clone https://github.com/NirajPujari/fastapi_notes
-```
+    ```bash 
+    git clone https://github.com/NirajPujari/fastapi_notes
+    ```
 
 2. Navigate to the project directory:
-```bash 
-cd fastapi_notes
-```
+    ```bash 
+    cd fastapi_notes
+    ```
 
 3. Run the FastAPI application:
-```bash 
-uvicorn main:app --reload
-```
+    ```bash 
+    uvicorn main:app --reload
+    ```
 
 
 ## API Documentation
 
 ### Authentication Endpoints
 
-- POST `/api/auth/signup`: Create a new user account.
-- POST `/api/auth/login`: Log in to an existing user account and receive an access token.
-- DELETE `/api/auth/login/{token}`: Log out the user with the given token.
+- **POST** `/api/auth/signup`: Create a new user account.
+- **POST** `/api/auth/login`: Log in to an existing user account and receive an access token.
+- **DELETE** `/api/auth/login/{token}`: Log out the user with the given token.
 
 ### Note Endpoints
 
-- GET `/api/notes`: Get a list of all notes for the authenticated user.
-- GET `/api/notes/{id}`: Get a note by ID for the authenticated user.
-- POST `/api/notes`: Create a new note for the authenticated user.
-- PUT `/api/notes/{id}`: Update an existing note by ID for the authenticated user.
-- DELETE `/api/notes/{id}`: Delete a note by ID for the authenticated user.
-- POST `/api/notes/{id}/share`: Share a note with another user for the authenticated user.
-- GET `/api/search?q=:query`: Search for notes based on keywords for the authenticated user.
+- **GET** `/api/notes`: Get a list of all notes for the authenticated user.
+- **GET** `/api/notes/{id}`: Get a note by ID for the authenticated user.
+- **POST** `/api/notes`: Create a new note for the authenticated user.
+- **PUT** `/api/notes/{id}`: Update an existing note by ID for the authenticated user.
+- **DELETE** `/api/notes/{id}`: Delete a note by ID for the authenticated user.
+- **POST** `/api/notes/{id}/share`: Share a note with another user for the authenticated user.
+- **GET** `/api/search?q=:query`: Search for notes based on keywords for the authenticated user.
+
+## Database Information
+### Database - MongoDB
+- **Type**: NoSQL 
+
+### Database Structure
+- **db**:
+    - **login**: Collection for storing login information.
+    - **signup**: Collection for storing user signup details.
+    - **notes**: Collection for storing notes.
+
+### Reason for MongoDB
+
+- **Schema-less Design**
+- **Scalability**
+- **Document-Oriented**
+- **High Performance**
+- **Community Support**
+- **Adoption**
 
 ## Usage Examples
 ### Authentication Endpoints
