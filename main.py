@@ -106,6 +106,16 @@ class ShareNote(BaseModel):
     touser: str
 
 
+# Endpoint to create a new note
+@app.post("/api/notes")
+async def create_notes(note: Note):
+    note = note.dict()
+    id = randint(10000, 100000)
+    note.setdefault("id", id)
+    notes_collection.insert_one(note)
+    return {"id": id, "message": "Note created successfully"}
+
+
 # Endpoint to fetch all the notes
 @app.get("/api/notes")
 async def get_notes(user: dict):
@@ -123,16 +133,6 @@ async def get_notes_by_id(id: int, user: dict):
         return {"id": note["id"], "title": note["title"], "content": note["content"]}
     else:
         raise HTTPException(status_code=404, detail="Note not found")
-
-
-# Endpoint to create a new note
-@app.post("/api/notes")
-async def create_notes(note: Note):
-    note = note.dict()
-    id = randint(10000, 100000)
-    note.setdefault("id", id)
-    notes_collection.insert_one(note)
-    return {"id": id, "message": "Note created successfully"}
 
 
 # Endpoint to update the already present note
