@@ -63,7 +63,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Community Support**
 - **Adoption**
 
-## Usage Examples
+## Usage Examples(Postman)
 ### Authentication Endpoints
 
 **Signup:**
