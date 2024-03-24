@@ -87,7 +87,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Header**:
   ```
   key : ygyrlTfv7tqVznf
-
 **Log-in:**
 
 **POST** `/api/auth/login`
@@ -100,7 +99,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Header**:
   ```
   key : ygyrlTfv7tqVznf
-
 **Log-out:**
 
 **DELETE** `/api/auth/login{token}`
@@ -110,7 +108,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Header**:
   ```
   key : ygyrlTfv7tqVznf
-
 ### Note Endpoints
 
 **Create Note:**
@@ -126,7 +123,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
   ```
   key : ygyrlTfv7tqVznf
   token: <logintoken>
-
 **Fetch Notes:**
 
 **GET** `/api/notes`
@@ -137,7 +133,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
   ```
   key : ygyrlTfv7tqVznf
   token: <logintoken>
-
 **Fetch Notes by ID:**
 
 **GET** `/api/notes/{id}`
@@ -148,7 +143,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
   ```
   key : ygyrlTfv7tqVznf
   token: <logintoken>
-
 **Update Note by ID:**
 
 **PUT** `/api/notes/{id}`
@@ -162,7 +156,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
   ```
   key : ygyrlTfv7tqVznf
   token: <logintoken>
-
 **Delete Note by ID:**
 
 **DELETE** `/api/notes/{id}`
@@ -173,7 +166,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
   ```
   key : ygyrlTfv7tqVznf
   token: <logintoken>
-
 **Share Note:**
 
 **POST** `/api/notes/{id}/share`
@@ -186,7 +178,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
   ```
   key : ygyrlTfv7tqVznf
   token: <logintoken>
-
 **Search Note:**
 
 **POST** `/api/search?query=user=example,title=example`
@@ -197,7 +188,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
   ```
   key : ygyrlTfv7tqVznf
   token: <logintoken>
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
