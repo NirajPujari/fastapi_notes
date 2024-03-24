@@ -44,6 +44,15 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **POST** `/api/notes/{id}/share`: Share a note with another user for the authenticated user.
 - **GET** `/api/search?q=:query`: Search for notes based on keywords for the authenticated user.
 
+
+#### -> For Authentication of the user we can use a api key and login tokens that can be random but for this we can use below api key 
+- **Api Key**:
+  ```
+  key : ygyrlTfv7tqVznf
+- **Login Token**:
+  ```
+  token : <random for all user>
+
 ## Database Information
 ### Database - MongoDB
 - **Type**: NoSQL 
@@ -76,6 +85,9 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
       "useremail": "example@example.com",
       "password": "password"
   }
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
 
 **Log-in:**
 
@@ -86,6 +98,9 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
       "userid": "example",
       "password": "password"
   }
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
 
 **Log-out:**
 
@@ -93,6 +108,9 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Body**:
   ```json
   {}
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
 
 ### Note Endpoints
 
@@ -102,28 +120,35 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Body**:
   ```json
   {
-      "user": "example",
       "title": "Example Note",
       "content": "This is an example note."
   }
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
+  token: <logintoken>
 
 **Fetch Notes:**
 
 **GET** `/api/notes`
 - **Body**:
   ```json
-  {
-      "user": "example"
-  }
+  {}
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
+  token: <logintoken>
 
 **Fetch Notes by ID:**
 
 **GET** `/api/notes/{id}`
 - **Body**:
   ```json
-  {
-      "user": "example"
-  }
+  {}
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
+  token: <logintoken>
 
 **Update Note by ID:**
 
@@ -131,19 +156,24 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Body**:
   ```json
   {
-      "user": "example",
       "title": "Update Note Title",
       "content": "Update note."
   }
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
+  token: <logintoken>
 
 **Delete Note by ID:**
 
 **DELETE** `/api/notes/{id}`
 - **Body**:
   ```json
-  {
-      "user": "example"
-  }
+  {}
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
+  token: <logintoken>
 
 **Share Note:**
 
@@ -151,9 +181,12 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Body**:
   ```json
   {
-      "fromuser": "username of person sending",
       "touser": "username of person receiving"
   }
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
+  token: <logintoken>
 
 **Search Note:**
 
@@ -161,6 +194,10 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Body**:
   ```json
   {}
+- **Header**:
+  ```
+  key : ygyrlTfv7tqVznf
+  token: <logintoken>
 
 ## Contributing
 
