@@ -52,7 +52,6 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the lib
 - **Login Token**:
   ```
   token : <random for all user>
-
 ## Database Information
 ### Database - MongoDB
 - **Type**: NoSQL 
