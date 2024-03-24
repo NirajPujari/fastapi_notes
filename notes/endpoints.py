@@ -6,6 +6,14 @@ from auth.endpoints import auth_user_login, auth_user_signup
 
 router = APIRouter()
 
+# Note Endpoints
+# GET /api/notes: get a list of all notes for the authenticated user.
+# GET /api/notes/id: get a note by ID for the authenticated user.
+# POST /api/notes: create a new note for the authenticated user.
+# PUT /api/notes/id: update an existing note by ID for the authenticated user.
+# DELETE /api/notes/id: delete a note by ID for the authenticated user.
+# POST /api/notes/:id/share: share a note with another user for the authenticated user.
+
 
 class Note(BaseModel):
     title: str
@@ -21,6 +29,7 @@ class ShareNote(BaseModel):
     touser: str
 
 
+# Endpoint to create a new note
 @router.post("")
 async def create_notes(note: Note, token: int = Header(None), key: str = Header(None)):
     if not key_checker(key):
@@ -38,6 +47,7 @@ async def create_notes(note: Note, token: int = Header(None), key: str = Header(
     return {"id": id, "message": "Note created successfully"}
 
 
+# Endpoint to fetch all the notes
 @router.get("")
 async def get_notes(token: int = Header(None), key: str = Header(None)):
     if not key_checker(key):
@@ -49,6 +59,7 @@ async def get_notes(token: int = Header(None), key: str = Header(None)):
     return [i for i in notes_collection.find({"user": user}, {"_id": 0, "user": 0})]
 
 
+# Endpoint to fetch single note using id
 @router.get("/{id}")
 async def get_notes_by_id(id: int, token: int = Header(None), key: str = Header(None)):
     if not key_checker(key):
@@ -64,6 +75,7 @@ async def get_notes_by_id(id: int, token: int = Header(None), key: str = Header(
     return note
 
 
+# Endpoint to update the already present note
 @router.put("/{id}")
 async def update_note(
     id: int, note: UpdatedNote, token: int = Header(None), key: str = Header(None)
@@ -82,6 +94,7 @@ async def update_note(
     return {"message": "Note updated successfully"}
 
 
+# Endpoint to delete an note from the db
 @router.delete("/{id}")
 async def delete_note(id: int, token: int = Header(None), key: str = Header(None)):
     if not key_checker(key):
@@ -97,6 +110,7 @@ async def delete_note(id: int, token: int = Header(None), key: str = Header(None
     return {"message": "Item deleted successfully"}
 
 
+# Endpoint to note between user
 @router.post("/{id}/share")
 async def share_note(
     id: int, userdata: ShareNote, token: int = Header(None), key: str = Header(None)

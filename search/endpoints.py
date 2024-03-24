@@ -4,6 +4,8 @@ from auth.endpoints import auth_user_login
 
 router = APIRouter()
 
+# Note Endpoints
+# GET /api/search?q=:query: search for notes based on keywords for the authenticated user.
 
 # Endpoint to search the note
 @router.get("/search")
